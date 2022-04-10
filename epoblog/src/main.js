@@ -1,9 +1,19 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from 'vue'
+import App from './App.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-const app = createApp(App);
+/* import fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
 
-app.use(router);
+/* import specific icon(s) */
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
-app.mount("#app");
+
+/* add icons to the library */
+library.add(faPhone)
+
+//const epoblog = 
+createApp(App)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .mount('#app')
+/* add font awesome icon component */
