@@ -6,6 +6,7 @@
       <p>"Welcome to Your Vue.js App"</p>
       <PostLatest />
       <PostCategories />
+      <router-view />
     </main>
     <FooterItem />
   </body>
