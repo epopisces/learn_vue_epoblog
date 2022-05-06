@@ -7,12 +7,9 @@ import Markdown from 'vue3-markdown-it'
 /* import fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-/* import specific icon(s) */
-import { faPhone } from '@fortawesome/free-solid-svg-icons'
-
-
-/* add icons to the library */
-library.add(faPhone)
+/* import specific icon(s) & add to the library */
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+library.add(faHouse)
 
 const epoblog = createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)

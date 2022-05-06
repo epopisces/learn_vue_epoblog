@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p><font-awesome-icon icon="phone" /></p>
+    <p><font-awesome-icon icon="house" /></p>
     <p>You there</p>
     <p>Ya, you</p>
   </header>

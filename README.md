@@ -99,4 +99,22 @@ npm run serve
 npm run build:index
 
 ```
+
+## Using FontAwesome Icons
+`main.js`
+```js
+/* import specific icon(s) & add to the library */
+import { faHouse } from '@fortawesome/free-solid-svg-icons'
+library.add(faHouse)
+```
+`$Component.vue`
+```html
+<template>
+  ...
+  <font-awesome-icon icon="house" />
+  ...
+</template>
+```
+
+## Using a Task-like NPM Script
 The `npm run build:index` command will run the [generate_index.ts](./scripts/generate_index.ts) script to populate the [posts_index.json](./public/blog_store/posts_index.json) file
