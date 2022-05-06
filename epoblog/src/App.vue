@@ -1,58 +1,39 @@
 <template>
-  <body>
-    <HeaderItem />
-    <main>
-      <img class="banner-image" alt="Vue logo" src="./assets/Super-Star-Destroyer-of-Fireplace-Mantels.jpg">
-      <p>"Welcome to Your Vue.js App"</p>
-      <PostLatest />
-      <PostCategories />
+  <PatchMeta />
+  <NavBar
+    :title="'📝 vue3-md-blog'"
+    :sections="blogSections"
+  />
+  <Suspense>
+    <template #default>
       <router-view />
-    </main>
-    <FooterItem />
-  </body>
+    </template>
+    <template #fallback>
+      <Loader />
+    </template>
+  </Suspense>
+  <Footer />
 </template>
 
-<script setup>
-/* eslint-disable no-unused-vars */
-import HeaderItem from './components/HeaderItem.vue'
-import FooterItem from './components/FooterItem.vue'
-import PostLatest from './components/PostLatest.vue'
-import PostCategories from './components/PostCategories.vue'
-//import BlogPost from './components/BlogPost.vue'
-/* eslint-enable no-unused-vars */
+<script lang="ts">
+import { defineComponent, inject } from 'vue'
+import PatchMeta from '@/components/PatchMeta.vue'
+import Loader from '@/components/Loader.vue'
+import NavBar from '@/components/NavBar.vue'
+import Footer from '@/components/Footer.vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'github-markdown-css/github-markdown.css'
+
+export default defineComponent({
+  components: {
+    PatchMeta,
+    Loader,
+    NavBar,
+    Footer
+  },
+  setup () {
+    const blogSections = inject('blogSections', {})
+    return { blogSections }
+  }
+})
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-    flex: auto;
-    background-color: #ccc;
-}
-
-.banner-image {
-  width: 100%;
-  height: 15em;
-  object-position: 0% 75%;
-  object-fit: cover;
-}
-</style>
