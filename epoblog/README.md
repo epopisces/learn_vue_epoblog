@@ -75,9 +75,16 @@ For obvious reasons.  This makes the fontawesome icons available to Vue.  See [F
 scrollto-with-animation) - 3.2k
 old deps, may with to use still -->
 
+# What I've Tried
+[Nicolas Udy's Vue.js Blog Demo](https://snipcart.com/blog/vuejs-blog-demo).  Takeaways:
+* Got the JAMstack separation of data layer across to me in ways Gridsome did not
+
+[Yeikiu's vue3-md-blog template](https://yeikiu.github.io/vue3-md-blog/#/) -  Ultimately moved away from this template as it introduced more new concepts than I was able to take on--modifying anything (eg introducing Markdown) had too great a learning curve given TypeScript which was entirely new to me.  Takeaways:
+* script to generate index file from folder
+
 # References
 
-* [Yeikiu's vue3-md-blog template](https://yeikiu.github.io/vue3-md-blog/#/) - this introduced me to the true separation of concerns, a la JAMstack, and the generate index task.  Ultimately moved away from this template as it introduced more new concepts than I was able to take on--modifying anything (eg introducing Markdown) had too great a learning curve.
+* [Yeikiu's vue3-md-blog template](https://yeikiu.github.io/vue3-md-blog/#/)
 * [Nicolas Udy's Vue.js Blog Demo](https://snipcart.com/blog/vuejs-blog-demo)
 
 
