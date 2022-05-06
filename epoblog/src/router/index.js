@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 //import About from '../views/About.vue'
-import BlogPage from '../views/BlogPage.vue'
 import NotFound from '../views/NotFound.vue'
 
 const routes = [
@@ -19,22 +18,6 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: About
   // },
-  
-  {
-    path: '/feed',
-    name: 'Feed',
-    component: BlogPage
-  },
-  {
-    path: '/category/:category',
-    name: 'Category',
-    component: BlogPage
-  },
-  {
-    path: '/post/:post',
-    name: 'Post',
-    component: BlogPage
-  },
   {
     path: '/404',
     name: 'NotFound',
