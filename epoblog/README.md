@@ -1,5 +1,5 @@
 # epoblog
-
+> See the [Project README](../README.md) for authoritative documentation
 ## Project setup
 ```
 npm install
@@ -23,6 +23,3 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-
-# Resources
-https://snipcart.com/blog/vuejs-blog-demo
