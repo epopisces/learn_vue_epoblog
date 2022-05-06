@@ -31,6 +31,7 @@ Trying to do several (too many) things at once.  Let's break it down
 * [ ] I want the data layer separate from the frontend: I've seen both `/static/api/` and `/public/` used for data (such as blog post markdown).
   * it appears /static/api/ may be the better route?  See [this article](https://cli.vuejs.org/guide/html-and-static-assets.html#when-to-use-the-public-folder)
 * [x] Support FontAwesome icons
+* [ ] Link to a blog page built from components
 * [ ] Render Markdown
 * [ ] Render Mermaid
 * [ ] Use frontmatter
