@@ -23,15 +23,40 @@ Vue 3 again
 * well for heaven sake's let's just roll our own on top of Vue 3!  If I'm going to have to invest the time would rather learn a capable, cutting edge framework with a wide range of possibilities at the same time
   * as a starting point, explored some templates and tutorials.  See [references](#references) for the most impactful ones.  Realized I need to start simple and do a building block style, iterative process to add the features I want.  Trying to modify templates was moving too fast for my knowedge of Vue, JavaScript, TypeScript, and all the other things being thrown into the mix.
 
+# Considerations
+
+## Serve markdown to client and render clientside, or serve prerendered?
+Makes sense to serve markdown.  It's lightweight, and the client-side code is fairly lightweight too.  Major search engines will execute the JS to inspect the result
+
+## Serve mermaid to client and render clientside, or server prerendered?
+A trickier one.  Mermaid rendering is NOT lightweight. Could have a separate, headless chrome instance running alongside API, when mermaid would be delivered intercepts, renders, inserts PNG?  Seems. . .less than elegant heh
+
+## Nav generated at buildtime or runtime?
+Make an API call vs created at buildtime?  API call is more flexible, though I think there are ways to support in-browser page creation/editing either way.  Let's start with build time, can always alter in the future.
+
+## Images in DB or hosted in Frontend?
+Frontend: take advantage of CDN.  Image repo on the frontend with predictable paths for blog posts to include (and for frontmatter to reference for background image, etc)
 
 # Goals
 
 Trying to do several (too many) things at once.  Let's break it down
-
+* [x] Front Page with styling
+  * [x] splash graphic
+  * [x] with two 'latest' objects centered below splash graphic
+  * [ ] with a dynamic number of 'category' objects centered below latest
+* [x] Header bar
+  * [x] Working home button
+  * [ ] (mobile) Dropdown menu
+    * [ ] including categories
+  * [ ] (desktop) Categories dropdown
+  * [ ] (mobile) search icon
+  * [ ] (desktop) search icon + entry
+* [x] Footer bar
 * [ ] I want the data layer separate from the frontend: I've seen both `/static/api/` and `/public/` used for data (such as blog post markdown).
   * it appears /static/api/ may be the better route?  See [this article](https://cli.vuejs.org/guide/html-and-static-assets.html#when-to-use-the-public-folder)
+  * moot point, data layer will sit behind API layer (FastAPI)
 * [x] Support FontAwesome icons
-* [ ] Link to a blog page built from components
+* [x] Link to a blog page built from components
 * [ ] Render Markdown
 * [ ] Render Mermaid
 * [ ] Use frontmatter
@@ -44,10 +69,11 @@ Trying to do several (too many) things at once.  Let's break it down
   * [ ] Use to generate latest card content and link from front page
 
 # Where I Left Off
-I have a working single page, but no links (or direct URLs) work. Need to prioritize and break this project down into bite-sized chunks (perhaps even separate projects to be recombined in the future)
+I have a working single page, but no working links yet. Routing is in place for /blog/$category/$post, where category and post are passed to the BlogPage view
+
+Considering using a Task (which runs every run serve/build) to generate a json doc that is used to dynamically construct objects for category, author, title, etc.
 
 > NOTE: the below dependencies are copied from my prior attempt, and do not accurately reflect the current state.
-
 
 # Dependencies (3rd Party Components)
 

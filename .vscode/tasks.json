@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "type": "npm",
+      "script": "serve",
+      "path": "epoblog",
+      "problemMatcher": [
+        "$func-node-watch"
+      ],
+      "label": "npm: serve - epoblog",
+      "detail": "vue-cli-service serve",
+      "isBackground": true
+    }
+  ]
+}

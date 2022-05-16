@@ -1,26 +1,18 @@
-<template>
-  <body>
-    <HeaderItem />
-    <main>
-      <img class="banner-image" alt="Vue logo" src="./assets/Super-Star-Destroyer-of-Fireplace-Mantels.jpg">
-      <p>"Welcome to Your Vue.js App"</p>
-      <PostLatest />
-      <PostCategories />
-      <router-view />
-    </main>
-    <FooterItem />
-  </body>
-</template>
-
 <script setup>
 /* eslint-disable no-unused-vars */
 import HeaderItem from './components/HeaderItem.vue'
 import FooterItem from './components/FooterItem.vue'
-import PostLatest from './components/PostLatest.vue'
-import PostCategories from './components/PostCategories.vue'
 //import BlogPost from './components/BlogPost.vue'
 /* eslint-enable no-unused-vars */
 </script>
+
+<template>
+  <body>
+    <HeaderItem />
+      <router-view />
+    <FooterItem />
+  </body>
+</template>
 
 <style>
 #app {
