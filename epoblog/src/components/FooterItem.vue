@@ -1,6 +1,23 @@
+<script>
+export default {
+  data() {
+    return {
+      quote: {}
+    }
+  },
+
+  mounted() {
+    fetch('http://localhost:7071/quotes/random')
+      .then(res => res.json())
+      .then(data => this.quote = data)
+      .catch(err => console.log(err.message))
+  }
+}
+</script>
+
 <template>
   <footer>
-    <p>See ya around space cowboy</p>
+    <p>{{ quote.quote }} by {{ quote.author }}</p>
   </footer>
 </template>
 
