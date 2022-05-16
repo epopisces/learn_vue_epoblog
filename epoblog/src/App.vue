@@ -1,11 +1,3 @@
-<template>
-  <body>
-    <HeaderItem />
-      <router-view />
-    <FooterItem />
-  </body>
-</template>
-
 <script setup>
 /* eslint-disable no-unused-vars */
 import HeaderItem from './components/HeaderItem.vue'
@@ -13,6 +5,14 @@ import FooterItem from './components/FooterItem.vue'
 //import BlogPost from './components/BlogPost.vue'
 /* eslint-enable no-unused-vars */
 </script>
+
+<template>
+  <body>
+    <HeaderItem />
+      <router-view />
+    <FooterItem />
+  </body>
+</template>
 
 <style>
 #app {

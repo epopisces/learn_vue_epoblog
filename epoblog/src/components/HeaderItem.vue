@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p><font-awesome-icon icon="house" /></p>
+    <p><router-link to="/"><font-awesome-icon icon="house" /></router-link></p>
     <p>You there</p>
     <p>Ya, you</p>
   </header>
