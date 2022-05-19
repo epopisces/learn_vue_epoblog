@@ -1,4 +1,5 @@
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <div class="notfound">
     <h1>404</h1>
     <p>Did you mean to visit one of the following links instead?

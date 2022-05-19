@@ -17,6 +17,7 @@ export default {
 </script>
 
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <footer>
     <p>{{ quote.quote }} by {{ quote.author }}</p>
   </footer>

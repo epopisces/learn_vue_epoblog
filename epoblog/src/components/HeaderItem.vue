@@ -1,4 +1,5 @@
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <header>
     <p><router-link to="/"><font-awesome-icon icon="house" /></router-link></p>
     <p>You there</p>

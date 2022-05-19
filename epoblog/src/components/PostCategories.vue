@@ -1,4 +1,5 @@
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <a>Categories</a>
   <div class="category_wrapper">
   <article class="category_card">
