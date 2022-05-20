@@ -8,7 +8,7 @@ export default {
   props: ['posts'],
   components: { PostCard },
   // eslint-disable-next-line
-  setup(props) {
+  setup() {
     onMounted(() => console.log('component mounted'))
     onUnmounted(() => console.log('component mounted'))
     onUpdated(() => console.log('component mounted'))

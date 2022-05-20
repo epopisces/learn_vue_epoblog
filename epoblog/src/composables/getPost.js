@@ -1,30 +1,28 @@
 import { ref } from 'vue'
 
-const getPosts = () => {
-  
-  const posts = ref([])
+const getPosts = (id) => {
+  const post = ref()
   const error = ref(null)
-  console.log(posts)
   
   const load = async () => {
     try {
-      let data = await fetch('http://localhost:7071/blog/posts') 
-      
+      let data = await fetch('http://localhost:7071/blog/posts/' + id) 
       console.log(data)
       // error handling when API is unavailable or req malformed
       if (!data.ok) {
-        throw Error('no data available')
+        throw Error('that post does not exist')
       }
 
-      posts.value = await data.json()
-      console.log(posts)
+      post.value = await data.json()
+      
+      console.log(post)
     } catch (err) {
       error.value = err.message
       console.log(error.value)
     }
   }
 
-  return { posts, error, load }
+  return { post, error, load }
 }
 
-export default getPosts
+export default getPost

@@ -6,27 +6,31 @@ export default {
   props: ['post'],
   setup(props) {
     const snippet = computed(() => {
-      return props.post.body.substring(0,100) + '....'
+      return props.post.body.substring(0,100) + '...'
     })
 
     return { snippet }
-  },
+  }
+
 }
 </script>
 
 <template>
   <!--eslint-disable vue/no-multiple-template-root-->
   <article class="latest_card">
-    <img src="../assets/logo.png" alt="" />
-    <div class="card__content">
-      <h2 class="card__title">{{ post.title }}</h2>
-      <p> {{ snippet }} </p>
-      <!-- <span v-for="tag in posts[0].tags" :key="tag">
-        #{{ tag }}
-      </span> -->
-      <p class="post__link"><a href="#">Read more</a></p>
-    </div>
+    <router-link :to="{ name: 'BlogPage', params: { id: post.id }}">
+      <img src="../assets/logo.png" alt="" />
+      <div class="card__content">
+        <h2 class="card__title">{{ post.title }}</h2>
+        <p> {{ snippet }} </p>
+        <!-- <span v-for="tag in posts[0].tags" :key="tag">
+          #{{ tag }}
+        </span> -->
+        <p class="post__link">Read more</p>
+      </div>
+    </router-link>
   </article>
+  
 </template>
 
 <style>

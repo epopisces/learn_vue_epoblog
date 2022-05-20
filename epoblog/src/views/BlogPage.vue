@@ -1,17 +1,18 @@
 <!--'Details.vue' from The Net Ninja's tutorial-->
 <script>
 
-import MarkdownRender from '../components/MarkdownRender.vue'
-import getPosts from '../composables/getPosts'
+import MarkdownRender from '@/components/MarkdownRender.vue'
+import getPost from '@/composables/getPosts'
 //import Markdown from 'vue3-markdown-it'
 export default {
-  setup () {
+  props: ['id'],
+  setup (props) {
     // get the values from the getPosts func
-    const { posts, error, load } = getPosts()
+    const { post, error, load } = getPost(props.id)
     
     load()
 
-    return { posts, error }
+    return { post, error }
   },
   components: {
     //Markdown,
@@ -38,15 +39,15 @@ export default {
   <!--eslint-disable vue/no-multiple-template-root-->
   <div>
     <div v-if="error">{{ error }}</div>
-    <h1>The blog is ID#{{ $route.params.id }}</h1>
-    <div v-if="posts.length">
-      <h1>Within the category {{ posts[0].category }}</h1>
-      <p>{{ posts[0].author }}</p>
+    <h3>The blog is ID#{{ $route.params.id }}</h3>
+    <div v-if="post">
+      <h3>{{ post.title }}</h3>
+      <p>Within the category {{ post.category }}, by author {{ post.author }}</p>
       <!-- <span v-for="tag in posts[0].tags" :key="tag">
         #{{ tag }}
       </span> -->
       <div style="text-align: left;">
-      {{ posts[0].body }}
+      {{ post.body }}
       <!--
       
       <Markdown :source="posts[0].body" />
