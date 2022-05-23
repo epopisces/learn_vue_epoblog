@@ -52,14 +52,11 @@ Trying to do several (too many) things at once.  Let's break it down
   * [ ] (mobile) search icon
   * [ ] (desktop) search icon + entry
 * [x] Footer bar
-* [ ] I want the data layer separate from the frontend: I've seen both `/static/api/` and `/public/` used for data (such as blog post markdown).
-  * it appears /static/api/ may be the better route?  See [this article](https://cli.vuejs.org/guide/html-and-static-assets.html#when-to-use-the-public-folder)
-  * moot point, data layer will sit behind API layer (FastAPI)
 * [x] Support FontAwesome icons
 * [x] Link to a blog page built from components
-* [ ] Render Markdown
+* [x] Render Markdown
 * [ ] Render Mermaid
-* [ ] Use frontmatter
+* [ ] Use frontmatter (see [frontmatter-markdown-loader](https://github.com/hmsk/frontmatter-markdown-loader), specifically [this issue](https://github.com/hmsk/frontmatter-markdown-loader/issues/238))
   * [ ] That I define
 * [ ] Dynamically create list of categories from frontmatter
   * [ ] Used to generate list of category cards, as well as category list in menu
