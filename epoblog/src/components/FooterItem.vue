@@ -2,20 +2,22 @@
 export default {
   data() {
     return {
-      quote: {}
+      quote: []
     }
   },
-
+  // note quotes/* returns a list, incl /random which returns a list of 1 quote
+  // by default.  Thus the data[0] below
   mounted() {
     fetch('http://localhost:7071/quotes/random')
       .then(res => res.json())
-      .then(data => this.quote = data)
+      .then(data => this.quote = data[0])
       .catch(err => console.log(err.message))
   }
 }
 </script>
 
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <footer>
     <p>{{ quote.quote }} by {{ quote.author }}</p>
   </footer>

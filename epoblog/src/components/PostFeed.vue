@@ -1,22 +1,28 @@
+<!--'PostList.vue' from The Net Ninja's tutorial-->
+<script>
+import { onMounted, onUnmounted, onUpdated } from 'vue'
+import PostCard from './PostCard.vue'
+
+export default {
+  // eslint-disable-next-line
+  props: ['posts'],
+  components: { PostCard },
+  // eslint-disable-next-line
+  setup() {
+    onMounted(() => console.log('component mounted'))
+    onUnmounted(() => console.log('component mounted'))
+    onUpdated(() => console.log('component mounted'))
+  },
+}
+</script>
+
 <template>
+  <!--eslint-disable vue/no-multiple-template-root-->
   <a>Latest Posts</a>
   <div class="latest_wrapper">
-  <article class="latest_card">
-    <img src="../assets/logo.png" alt="" />
-    <div class="card__content">
-      <h2 class="card__title">Title</h2>
-      <p>Description</p>
-      <p class="post__link"><a href="#">Read more</a></p>
+    <div v-for="post in posts" :key="post.id">
+      <PostCard :post="post" />
     </div>
-  </article>
-  <article class="latest_card">
-    <img src="../assets/logo.png" alt="" />
-    <div class="card__content">
-      <h2>Title</h2>
-      <p>Description</p>
-      <p class="post__link"><a href="#">Read more</a></p>
-    </div>
-  </article>
   </div>
 </template>
 
