@@ -2,36 +2,22 @@
 <script>
 
 import MarkdownRender from '@/components/MarkdownRender.vue'
-import getPost from '@/composables/getPosts'
+import getPost from '@/composables/getPost'
 //import Markdown from 'vue3-markdown-it'
 export default {
   props: ['id'],
   setup (props) {
     // get the values from the getPosts func
-    const { post, error, load } = getPost(props.id)
-    
+    const { post, error, load, mdRendered } = getPost(props.id)
+
     load()
 
-    return { post, error }
+    return { post, error, mdRendered }
   },
   components: {
     //Markdown,
     MarkdownRender // eslint-disable-line
-  },
-  // data() {
-  //   return {
-  //     post: []//,
-  //     //source: post.body
-  //   }
-  // },
-  // note quotes/* returns a list, incl /random which returns a list of 1 quote
-  // by default.  Thus the data[0] below
-  // mounted() {
-  //   fetch('http://localhost:7071/blog/posts')
-  //     .then(res => res.json())
-  //     .then(data => this.post = data[0])
-  //     .catch(err => console.log(err.message))
-  // }
+  }
 }
 </script>
 
@@ -48,8 +34,9 @@ export default {
       </span> -->
       <div style="text-align: left;">
       {{ post.body }}
+      <div v-html="mdRendered"></div>
       <!--
-      
+      <MarkdownRender :posts="posts" />
       <Markdown :source="posts[0].body" />
       <MarkdownRender :source="posts[0].body" />-->
       </div>
@@ -59,7 +46,7 @@ export default {
     </div>
   </div>
 </template>
-''
+
 <!-- ###########################################################################
 So I'm thinking this view (or the primary component it uses) should accept markdown as a 'body', and process it through
 the appropriate components (third party or otherwise) to render it

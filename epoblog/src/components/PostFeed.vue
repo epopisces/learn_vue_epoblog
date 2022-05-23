@@ -15,6 +15,7 @@ export default {
   },
 }
 </script>
+
 <template>
   <!--eslint-disable vue/no-multiple-template-root-->
   <a>Latest Posts</a>

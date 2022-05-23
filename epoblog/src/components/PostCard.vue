@@ -11,7 +11,6 @@ export default {
 
     return { snippet }
   }
-
 }
 </script>
 
